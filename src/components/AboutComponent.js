@@ -3,11 +3,32 @@ import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'r
 import { Link } from 'react-router-dom';
 
 
+function RenderPartner({partner}) {
+    if(partner) {
+        return(
+            <React.Fragment>
+                <Media object src={partner.image} alt={partner.name} width="150" />
+                <Media body className="ml-5 mb-4">
+                        <Media heading>
+                            {partner.name}
+                        </Media>
+                        {partner.description}
+                </Media>
+            </React.Fragment> 
+        );
+    } else {
+        return <div />;
+    }
+}
+
+
 function About(props) {
 
     const partners = props.partners.map(partner => {
         return (
-            <h5>{partner.name}</h5>
+            <Media tag='li' key={partner.id}>
+                <RenderPartner partner={partner}/>
+            </Media>
         );
     }); 
 
@@ -16,8 +37,14 @@ function About(props) {
             <div className="row">
                 <div className="col">
                     <Breadcrumb>
-                        <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
-                        <BreadcrumbItem active>About Us</BreadcrumbItem>
+                        <BreadcrumbItem>
+                            <Link to="/home">
+                                Home
+                            </Link>
+                        </BreadcrumbItem>
+                        <BreadcrumbItem active>
+                             Us
+                        </BreadcrumbItem>
                     </Breadcrumb>
                     <h2>About Us</h2>
                     <hr />
@@ -78,22 +105,5 @@ function About(props) {
     );
 }
 
-function RenderPartner({partner}) {
-    if(partner) {
-        return(
-            <React.Fragment>
-                <Media object src={partner.image} alt={partner.name} width="150" />
-                <Media body className="ml-5 mb-4">
-                        <Media heading>
-                            {partner.name}
-                        </Media>
-                        {partner.description}
-                </Media>
-            </React.Fragment> 
-        );
-    } else {
-        return <div />;
-    }
-}
 
 export default About;
