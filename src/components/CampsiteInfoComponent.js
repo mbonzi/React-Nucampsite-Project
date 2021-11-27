@@ -1,6 +1,35 @@
 import React from 'react';
-import { Card, CardImg, CardText, CardBody, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, Breadcrumb, BreadcrumbItem, Button} from 'reactstrap';
+import FontAwesomeIcon from 'font-awesome/css/font-awesome.css';
 import { Link } from 'react-router-dom';
+//import Button from 'reactstrap/lib/Button';
+
+
+class CommentForm extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    }
+  }
+
+  render() {    
+
+    return(
+      <React.Fragment>
+
+        <Button outline color="secondary" size="sm">
+          <i className="fa fa-light fa-pencil fa-lg" />
+          Submit Comment
+        </Button>{''}
+
+      </React.Fragment>
+    );
+
+  }
+};
+
 
 function RenderCampsite ({campsite}){
     return (
@@ -14,6 +43,7 @@ function RenderCampsite ({campsite}){
         </div>
     );
   }
+
 
 function RenderComments({comments}) {
   if (comments) {
@@ -30,11 +60,13 @@ function RenderComments({comments}) {
                 }).format(new Date(Date.parse(comments.date)))}
               </div>
             ))}
+            <CommentForm />
           </div>
         );
     }
     return <div />;
   }
+
 
 function CampsiteInfo(props) {
   if (props.campsite) {
