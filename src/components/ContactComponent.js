@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { Control, Form, Errors } from 'react-redux-form';
 
 class Contact extends Component {
-
     constructor(props) {
         super(props);
         this.state = {
