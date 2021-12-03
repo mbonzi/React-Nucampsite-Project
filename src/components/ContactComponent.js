@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-import { Breadcrumb, BreadcrumbItem,
-    Button, Label, Col, Row } from 'reactstrap';
+import { 
+    Breadcrumb, BreadcrumbItem,
+    Button, 
+    Label, 
+    Col, Row 
+    } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { Control, Form, Errors } from 'react-redux-form';
+import { Control, Form } from 'react-redux-form';
 
 class Contact extends Component {
     constructor(props) {
@@ -73,7 +77,7 @@ class Contact extends Component {
                         <Form model="feedbackForm" onSubmit={values => this.handleSubmit(values)}>
                             <Row className="form-group">
                                 <Label htmlFor="firstName" md={2}>First Name</Label>
-                                <Col md={10}>
+                                <Col md={10}> {/* eslint-disable-next-line */}
                                     <Control.text model=".firstName" id="firstName" name="firstName"
                                         placeholder="First Name"
                                         className="form-control"
@@ -83,7 +87,7 @@ class Contact extends Component {
 
                             <Row className="form-group">
                                 <Label htmlFor="lastName" md={2}>Last Name</Label>
-                                <Col md={10}>
+                                <Col md={10}> {/* eslint-disable-next-line */}
                                     <Control.text model=".lastName" id="lastName" name="lastName"
                                         placeholder="Last Name"
                                         className="form-control"
@@ -93,7 +97,7 @@ class Contact extends Component {
 
                             <Row className="form-group">
                                 <Label htmlFor="phoneNum" md={2}>Phone</Label>
-                                <Col md={10}>
+                                <Col md={10}> {/* eslint-disable-next-line */}
                                     <Control.text model=".phoneNum" id="phoneNum" name="phoneNum"
                                         placeholder="Phone number"
                                         className="form-control"
@@ -103,7 +107,7 @@ class Contact extends Component {
 
                             <Row className="form-group">
                                 <Label htmlFor="email" md={2}>Email</Label>
-                                <Col md={10}>
+                                <Col md={10}> {/* eslint-disable-next-line */}
                                     <Control.text model=".email" id="email" name="email"
                                         placeholder="Email"
                                         className="form-control"
@@ -114,7 +118,7 @@ class Contact extends Component {
                             <Row className="form-group">
                                 <Col md={{size: 4, offset: 2}}>
                                     <div className="form-check">
-                                        <Label check>
+                                        <Label check> {/* eslint-disable-next-line */}
                                             <Control.checkbox
                                                 model=".agree"
                                                 name="agree"
@@ -124,7 +128,7 @@ class Contact extends Component {
                                         </Label>
                                     </div>
                                 </Col>
-                                <Col md={4}>
+                                <Col md={4}> {/* eslint-disable-next-line */}
                                     <Control.select model=".contactType" name="contactType"
                                         className="form-control">
                                         <option>By Phone</option>
@@ -135,7 +139,7 @@ class Contact extends Component {
 
                             <Row className="form-group">
                                 <Label htmlFor="feedback" md={2}>Your Feedback</Label>
-                                <Col md={10}>
+                                <Col md={10}>  {/* eslint-disable-next-line */}
                                     <Control.textarea model=".feedback" id="feedback" name="feedback"
                                         rows="12"
                                         className="form-control"

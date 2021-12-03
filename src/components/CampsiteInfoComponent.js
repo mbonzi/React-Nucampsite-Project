@@ -109,6 +109,7 @@ class CommentForm extends React.Component {
             <LocalForm onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <label htmlFor="rating">Rating</label>
+                {/* eslint-disable-next-line */}
                 <Control.select
                   id="rating"
                   name="rating"
@@ -128,7 +129,7 @@ class CommentForm extends React.Component {
               </div>
 
               <div className="form-group">
-                <label htmlFor="author">Author</label>
+                <label htmlFor="author">Author</label> {/* eslint-disable-next-line */}
                 <Control.text
                   id="author"
                   name="author"
@@ -154,6 +155,7 @@ class CommentForm extends React.Component {
 
               <div className="form-group">
                 <label htmlFor="comments">Comment</label>
+                {/* eslint-disable-next-line */}
                 <Control.textarea
                   id="text"
                   name="text"
