@@ -9,7 +9,7 @@ function RenderCard({ item, isLoading, errMess }) {
     return <Loading />;
   }
   if (errMess) {
-    return <h4>{errMess}</h4>;
+    return <h4>{errMess}</h4>; 
   }
   return (
     <FadeTransform

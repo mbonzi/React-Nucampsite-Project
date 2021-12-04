@@ -33,24 +33,29 @@ function RenderPartner({ partner }) {
 }
 
 function PartnerList(props) {
-  const partners = props.partners.partners.map((partner) => {
+  console.log(props);
+  const partners = props.partners.partners.map(partner => {
+
     return (
       <Media tag="li" key={partner.id}>
         <RenderPartner partner={partner} />
       </Media>
     );
+
   });
 
   if (props.partners.isLoading) {
     return <Loading />;
   }
+
   if (props.partners.errMess) {
     return (
       <div className="col">
-        <h4>{props.partners.errMess}</h4>;
+        <h4>{props.partners.errMess}</h4>
       </div>
     );
   }
+
   return (
     <div className="col mt-4">
       <Media list>{partners}</Media>
